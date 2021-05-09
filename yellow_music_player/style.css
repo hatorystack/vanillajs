@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding-inline-start: unset;
+}
+
+body {
+  background-color: #f7d945;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.music-player-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 10px 10px 0 rgba(107, 77, 77, 0.1);
+  overflow: hidden;
+  width: 320px;
+}
+
+.music-player-container.play {
+  animation-play-state: running;
+}
+
+#music-player-list {
+  margin: 0;
+  padding: 20px 80px;
+}
+
+.music-info {
+  margin-top: 15px;
+}
+
+.music-info h3 {
+  font-size: 15px;
+  text-align: center;
+  margin: 0;
+}
+
+.album-img-container {
+  position: relative;
+  text-align: center;
+  margin: 30px 0 30px;
+}
+
+.album-img-container::after {
+  content: '';
+  background-color: #f7d945;
+  border: 2px solid rgba(107, 77, 77, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, 50%);
+}
+
+.album-img-container img {
+  border: 2px solid rgba(107, 77, 77, 0.5);
+  border-radius: 50%;
+  object-fit: cover;
+  height: 130px;
+  width: 130px;
+  animation: rotation 5s infinite linear;
+  animation-play-state: paused;
+}
+
+.music-player-container.play .album-img-container img {
+  border: 2px solid rgba(107, 77, 77, 0.9);
+  animation-play-state: running;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.action-btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0px;
+  border-radius: 50%;
+  color: #1e1e1e;
+  cursor: pointer;
+  margin: 0 20px 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  height: 3px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #1e1e1e;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
