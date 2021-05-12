@@ -32,9 +32,22 @@ body {
   animation-play-state: running;
 }
 
-#music-player-list {
+.music-player-list {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 25px 25px;
+  padding: 20px 0 20px;
+  width: 280px;
+}
+
+.player-list {
+  list-style-type: none;
   margin: 0;
-  padding: 20px 80px;
+  padding: 0;
+}
+
+.player-list-item {
+  font-size: 15px;
+  padding: 15px;
 }
 
 .music-info {

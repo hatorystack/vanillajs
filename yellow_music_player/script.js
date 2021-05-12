@@ -1,4 +1,5 @@
 const musicPlayerContainer = document.getElementById('music-player-container');
+const musicPlayerList = document.getElementById('player-list');
 
 const audio = document.getElementById('audio');
 const progressBar = document.getElementById('progress-bar');
@@ -30,6 +31,12 @@ loadSong(album[songIndex]);
 function loadSong(album) {
   songTitle.innerText = album;
   audio.src = `music/${album}.mp3`;
+}
+
+function playerList(album) {
+  album.forEach((song) => {
+    musicPlayerList.innerHTML += `<li class="player-list-item">${song}</li>`;
+  });
 }
 
 // Play song
@@ -103,16 +110,4 @@ audio.addEventListener('ended', nextSong);
 
 progressBar.addEventListener('click', setProgress);
 
-// load initial Ablum
-
-// function loadAlbum() {
-//   const songs = album['The Bodygard'];
-//   const ul = document.createElement('ul');
-//   musicPlayerList.appendChild(ul);
-
-//   songs.forEach((title, index) => {
-//     ul.innerHTML += `<li class="song-item">${index + 1} ${title}</li>`;
-//   });
-// }
-
-// window.onload = loadAlbum;
+window.onload = playerList(album);
