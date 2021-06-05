@@ -32,32 +32,18 @@ body {
   animation-play-state: running;
 }
 
-.music-player-list {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 25px 25px;
-  padding: 20px 0 20px;
-  width: 280px;
-}
-
-.player-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.player-list-item {
-  font-size: 15px;
-  padding: 15px;
-}
-
 .music-info {
   margin-top: 15px;
 }
 
 .music-info h3 {
-  font-size: 15px;
+  font-size: 0.9rem;
   text-align: center;
   margin: 0;
+}
+
+#song-title {
+  font-weight: 400;
 }
 
 .album-img-container {
@@ -90,7 +76,8 @@ body {
 }
 
 .music-player-container.play .album-img-container img {
-  border: 2px solid rgba(107, 77, 77, 0.9);
+  border: 2px solid rgba(247, 217, 69, 1);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   animation-play-state: running;
 }
 
